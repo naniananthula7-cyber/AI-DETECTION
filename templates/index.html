@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop Counter Interface</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 40px;
+            font-size: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .stop {
+            background-color: #f44336;
+        }
+        .button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <button class="button" onclick="window.location.href='/start'">START</button>
+
+    {% if show_stop %}
+    <button class="button stop" onclick="window.location.href='/stop'">STOP</button>
+    {% endif %}
+</body>
+</html>
