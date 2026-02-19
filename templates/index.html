@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Shop Counter Interface</title>
+    <title>AI Detection</title>
     <style>
         body {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: #f4f4f9;
+            margin: 0;
+            padding: 0;
         }
-        .button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 20px 40px;
-            font-size: 20px;
+        h1 {
+            margin-top: 30px;
+            font-size: 2.5em;
+            color: #333;
+        }
+        h3 {
+            margin-bottom: 40px;
+            color: #666;
+        }
+        button {
+            font-size: 1.2em;
+            padding: 15px 30px;
+            margin: 15px;
             border: none;
-            border-radius: 10px;
+            border-radius: 8px;
             cursor: pointer;
-            margin: 10px;
+            transition: 0.3s;
+        }
+        .start {
+            background: #4CAF50;
+            color: white;
+        }
+        .start:hover {
+            background: #45a049;
         }
         .stop {
-            background-color: #f44336;
+            background: #f44336;
+            color: white;
         }
-        .button:hover {
-            opacity: 0.9;
+        .stop:hover {
+            background: #da190b;
         }
     </style>
 </head>
 <body>
-    <button class="button" onclick="window.location.href='/start'">START</button>
+    <h1>AI DETECTION</h1>
+    <h3>Click the start button and start your detection</h3>
 
     {% if show_stop %}
-    <button class="button stop" onclick="window.location.href='/stop'">STOP</button>
+        <a href="{{ url_for('stop') }}"><button class="stop">🛑 Stop & Upload</button></a>
+    {% else %}
+        <a href="{{ url_for('start') }}"><button class="start">▶️ Start Detection</button></a>
     {% endif %}
 </body>
 </html>
