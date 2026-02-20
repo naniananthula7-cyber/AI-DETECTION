@@ -90,6 +90,11 @@ except Exception as e:
     print("❌ Fatal error occurred:", e)
     traceback.print_exc()
     sys.exit(1)'''''
+
+
+
+
+
 import cv2
 from ultralytics import YOLO
 from datetime import datetime
